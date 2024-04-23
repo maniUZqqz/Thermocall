@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:thermocall/home/view/home.dart';
+import 'package:thermocall/home/view/add_device.dart';
+import 'package:thermocall/home/view/home_app.dart';
 import 'package:thermocall/login/bloc/login_bloc.dart';
-import 'package:thermocall/login/view/login.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
+void main() => runApp(const MyApp());
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,9 +26,10 @@ class MyApp extends StatelessWidget {
         create: (context){
           return LoginBloc();
         },
-        child: HomeApp(),
+        child: AddDevice(),
       ),
       debugShowCheckedModeBanner: false,
     );
   }
 }
+

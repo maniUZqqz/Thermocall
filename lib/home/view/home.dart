@@ -1,108 +1,59 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:thermocall/home/view/more_vert.dart';
+
 import 'add_item.dart';
 import 'freezer.dart';
 
-class HomeApp extends StatefulWidget {
-  const HomeApp({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
-  State<HomeApp> createState() => _HomeAppState();
+  State<Home> createState() => _HomeState();
 }
-class _HomeAppState extends State<HomeApp> {
 
-  int _currentIndex = 0 ;
-
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 105
-              ),
-              child: Text(
-                  "ThermoCall",
-                  style: TextStyle(fontSize: 30),
-              ),
-            ),
-            Spacer(),
-            IconButton(
-                onPressed: () {
-                  MoreVert();
-                },
-                icon: Icon(
-              Icons.more_vert,
-              size: 35,
-            )
-            )
-          ],
-        )
-      ),
-      body:Container(
+    return Container(
       //  child: SingleChildScrollView()
-        child: Column(
-          children: [
-            Freezer(
-              name: "Freezer name",
-              time: "Last Updated 6:25 pm",
-              temperature: "-60",
-              maxTemperature: "-65",
-              minTemperature: "-50",
-              isError: false,
-            ),
-            Freezer(
-              name: "Freezer name",
-              time: "Last Updated 6:25 pm",
-              temperature: "-60",
-              maxTemperature: "-65",
-              minTemperature: "-50",
-              isError: true,
-            ),
-            Freezer(
-              name: "Freezer name",
-              time: "Last Updated 6:25 pm",
-              temperature: "-60",
-              maxTemperature: "-65",
-              minTemperature: "-50",
-              isError: false,
-            ),
-            Freezer(
-              name: "Freezer name",
-              time: "Last Updated 6:25 pm",
-              temperature: "-60",
-              maxTemperature: "-65",
-              minTemperature: "-50",
-              isError: false,
-            ),
-            Spacer(),
-            AddItem()
-          ],
-        ),
-        padding: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Freezer(
+            name: "Freezer name",
+            time: "Last Updated 6:25 pm",
+            temperature: "-60",
+            maxTemperature: "-65",
+            minTemperature: "-50",
+            isError: false,
+          ),
+          Freezer(
+            name: "Freezer name",
+            time: "Last Updated 6:25 pm",
+            temperature: "-60",
+            maxTemperature: "-65",
+            minTemperature: "-50",
+            isError: true,
+          ),
+          Freezer(
+            name: "Freezer name",
+            time: "Last Updated 6:25 pm",
+            temperature: "-60",
+            maxTemperature: "-65",
+            minTemperature: "-50",
+            isError: false,
+          ),
+          Freezer(
+            name: "Freezer name",
+            time: "Last Updated 6:25 pm",
+            temperature: "-60",
+            maxTemperature: "-65",
+            minTemperature: "-50",
+            isError: false,
+          ),
+          Spacer(),
+          AddItem()
+        ],
       ),
-       bottomNavigationBar: BottomNavigationBar(
-         currentIndex: _currentIndex,
-         iconSize: 35,
-         items: [
-           BottomNavigationBarItem(
-             icon: Icon(Icons.home_outlined),
-             label: ""
-           ),
-           BottomNavigationBarItem(
-             icon: Icon(Icons.person_outline),
-             label: ""
-           )
-         ],
-         onTap: (index) {
-           setState(() {
-             _currentIndex = index;
-           });
-         },
-       )
+      padding: EdgeInsets.all(10),
     );
   }
 }

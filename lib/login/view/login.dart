@@ -64,7 +64,7 @@ class _LoginState extends State<Login> {
             Button(
                 textInButton: "Log in",
                 textColor: ColorWhite,
-                navigator: Register(),
+//                navigator: Register(),
                 buttonColor: ColorBlack
             ),
             Spacer(),
@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
             Button(
                 textInButton: "Register",
                 textColor: ColorBlack,
-                navigator: Register(),
+ //               navigator: Register(),
                 buttonColor: ColorWhite
             )
           ],

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         create: (context){
           return LoginBloc();
         },
-        child: Login(),
+        child: HomeApp(),
       ),
       debugShowCheckedModeBanner: false,
     );

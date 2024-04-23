@@ -5,16 +5,19 @@ import 'login.dart';
 
 class Button extends StatefulWidget {
 
+
+
   String textInButton ;
-  Color  textColor ;
-  Widget navigator ;
   Color buttonColor ;
+  Color  textColor ;
+//  Widget navigator ;
+
 
   Button({super.key,
     required this.textInButton,
     required this.textColor,
-    required this.navigator,
     required this.buttonColor,
+//    required this.navigator,
   });
 
   @override
@@ -52,12 +55,13 @@ class _ButtonState extends State<Button> {
               ),
             ),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => widget.navigator
-                  )
-              );
+
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => widget.navigator
+              //     )
+              // );
             },
           ),
         )

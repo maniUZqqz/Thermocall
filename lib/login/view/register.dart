@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
             Button(
                 textInButton: "Register",
                 textColor: ColorWhite,
-                navigator: Login(),
+//                navigator: Login(),
                 buttonColor: ColorBlack
             ),
             Spacer(),
@@ -57,7 +57,7 @@ class _RegisterState extends State<Register> {
             Button(
                 textInButton: "Log in",
                 textColor: ColorBlack,
-                navigator: Login(),
+//                navigator: Login(),
                 buttonColor: ColorWhite
             )
           ],

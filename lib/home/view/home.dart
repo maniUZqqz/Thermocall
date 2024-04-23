@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:thermocall/home/view/more_vert.dart';
 import 'add_item.dart';
-import 'item.dart';
+import 'freezer.dart';
 
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
@@ -43,48 +43,40 @@ class _HomeAppState extends State<HomeApp> {
         )
       ),
       body:Container(
+      //  child: SingleChildScrollView()
         child: Column(
           children: [
-            Item(
-                circleColor: Color(0xFFFF2D1D),
-                backGrundColor: Color(0xFFFF3D3D),
-                textColor: Colors.white,
-                name: "Freezer name",
-                time: "Last Updated 6:25 pm",
-                temperature: "-60",
-                maxTemperature: "-65",
-                minTemperature: "-50",
-              ),
-            Item(
-              circleColor: Color(0xFFFFFFFF),
-              backGrundColor: Color(0xBEBEBE),
-              textColor: Colors.black,
-//              textColor: Color(0x686868),
+            Freezer(
               name: "Freezer name",
               time: "Last Updated 6:25 pm",
               temperature: "-60",
               maxTemperature: "-65",
               minTemperature: "-50",
+              isError: false,
             ),
-            Item(
-              circleColor: Color(0xFFFF2D1D),
-              backGrundColor: Color(0xFFFF3D3D),
-              textColor: Colors.white,
+            Freezer(
               name: "Freezer name",
               time: "Last Updated 6:25 pm",
               temperature: "-60",
               maxTemperature: "-65",
               minTemperature: "-50",
+              isError: true,
             ),
-            Item(
-              circleColor: Color(0xFFFF2D1D),
-              backGrundColor: Color(0xFFFF3D3D),
-              textColor: Colors.white,
+            Freezer(
               name: "Freezer name",
               time: "Last Updated 6:25 pm",
               temperature: "-60",
               maxTemperature: "-65",
               minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
             ),
             Spacer(),
             AddItem()

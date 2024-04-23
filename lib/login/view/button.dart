@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +8,7 @@ import 'login.dart';
 class Button extends StatefulWidget {
 
 
-
+  Function onTap ;
   String textInButton ;
   Color buttonColor ;
   Color  textColor ;
@@ -17,6 +19,7 @@ class Button extends StatefulWidget {
     required this.textInButton,
     required this.textColor,
     required this.buttonColor,
+    required this.onTap,
 //    required this.navigator,
   });
 
@@ -55,7 +58,7 @@ class _ButtonState extends State<Button> {
               ),
             ),
             onTap: () {
-
+              widget.onTap;
               // Navigator.push(
               //     context,
               //     MaterialPageRoute(

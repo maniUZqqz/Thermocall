@@ -64,8 +64,16 @@ class _LoginState extends State<Login> {
             Button(
                 textInButton: "Log in",
                 textColor: ColorWhite,
+                buttonColor: ColorBlack,
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Register(),
+                      )
+                  );
+                },
 //                navigator: Register(),
-                buttonColor: ColorBlack
             ),
             Spacer(),
             Center(
@@ -82,8 +90,16 @@ class _LoginState extends State<Login> {
             Button(
                 textInButton: "Register",
                 textColor: ColorBlack,
- //               navigator: Register(),
-                buttonColor: ColorWhite
+                buttonColor: ColorWhite,
+                onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Register(),
+                    )
+                );
+              },
+//              navigator: Register(),
             )
           ],
           crossAxisAlignment: CrossAxisAlignment.start,

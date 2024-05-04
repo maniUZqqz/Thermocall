@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:thermocall/home/view/home.dart';
 import 'package:thermocall/login/bloc/login_bloc.dart';
 import 'package:thermocall/login/bloc/login_state.dart';
 import 'package:thermocall/login/view/password_input.dart';
@@ -69,7 +70,7 @@ class _LoginState extends State<Login> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Register(),
+                          builder: (context) => Home(),
                       )
                   );
                 },
@@ -114,4 +115,4 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
+// SingleChildScrollView

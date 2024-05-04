@@ -29,45 +29,45 @@ class Button extends StatefulWidget {
 class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-            color: widget.buttonColor,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-                color: ColorBlack,
-                width: 2
-            )
-        ),
-        width: double.infinity,
-        padding: EdgeInsets.only(
-            top: Size16dp,
-            bottom: Size16dp
-        ),
-        child: Center(
-          child: InkWell(
-            child: Container(
-              decoration: BoxDecoration(
-                color: widget.buttonColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child:Text(
-                widget.textInButton,
-                style: TextStyle(
-                    color: widget.textColor
-                ),
-              ),
-            ),
-            onTap: () {
-              widget.onTap;
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) => widget.navigator
-              //     )
-              // );
-            },
+    return InkWell(
+      child:  Container(
+          decoration: BoxDecoration(
+              color: widget.buttonColor,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: ColorBlack,
+                  width: 2
+              )
           ),
-        )
-    );
+          width: double.infinity,
+          padding: EdgeInsets.only(
+              top: Size16dp,
+              bottom: Size16dp
+          ),
+          child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: widget.buttonColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child:Text(
+                  widget.textInButton,
+                  style: TextStyle(
+                      color: widget.textColor
+                  ),
+                ),
+              )
+          )
+      ),
+      onTap: () {
+        widget.onTap;
+        // Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //         builder: (context) => widget.navigator
+        //     )
+        // );
+      },
+    ) ;
   }
 }

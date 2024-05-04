@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -18,11 +17,11 @@ class _AddDeviceState extends State<AddDevice> {
   @override
   Widget build(BuildContext context) {
     return Device(
-        id: "12345yhbvcxz",
-        dataUpdated: "Updated 1 minutes ago",
-        minTemperature: "-50",
-        maxTemperature: "-90",
-        temperature: "-60",
+      id: "12345yhbvcxz",
+      dataUpdated: "Updated 1 minutes ago",
+      minTemperature: "-50",
+      maxTemperature: "-90",
+      temperature: "-60",
 
     );
   }
@@ -35,8 +34,6 @@ class Device extends StatefulWidget {
   String temperature ;
   String minTemperature ;
   String maxTemperature ;
-
-
 
   Device({
     required this.id,
@@ -121,32 +118,32 @@ class _DeviceState extends State<Device> {
                 child: Row(
                   children: [
                     Text(
-                        widget.minTemperature,
-                        style: TextStyle(
+                      widget.minTemperature,
+                      style: TextStyle(
                           fontSize: 30
-                        ),
+                      ),
                     ),
                     Padding(
-                    child:Container(
-                      child:  Text(
-                        widget.temperature,
-                        style: TextStyle(
-                            fontSize: 30
+                      child:Container(
+                        child:  Text(
+                          widget.temperature,
+                          style: TextStyle(
+                              fontSize: 30
+                          ),
                         ),
-                      ),
-                      width: 80,
-                      height: 80,
-                      padding: EdgeInsets.only(left: 15,top: 15),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xffEAF5FF)
-                      ),
-                    ) ,
-                    padding:EdgeInsets.only(right: 40,left: 50),
-                  ),
+                        width: 80,
+                        height: 80,
+                        padding: EdgeInsets.only(left: 15,top: 15),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xffEAF5FF)
+                        ),
+                      ) ,
+                      padding:EdgeInsets.only(right: 40,left: 50),
+                    ),
                     Text(
-                        widget.maxTemperature,
-                        style: TextStyle(
+                      widget.maxTemperature,
+                      style: TextStyle(
                           fontSize: 30
                       ),
                     )
@@ -182,9 +179,9 @@ class _DeviceState extends State<Device> {
           crossAxisAlignment: CrossAxisAlignment.start,
         ),
         padding: EdgeInsets.only(
-          left: 23,
-          right: 23,
-          bottom: 40
+            left: 23,
+            right: 23,
+            bottom: 40
         ),
       ),
     );

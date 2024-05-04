@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import 'add_item.dart';
+import 'add_freezer.dart';
 import 'freezer.dart';
 
 class Home extends StatefulWidget {
@@ -54,6 +55,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       padding: EdgeInsets.all(10),
+      color: Colors.white,
     );
   }
 }

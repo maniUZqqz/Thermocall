@@ -3,31 +3,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:thermocall/login/view/button.dart';
-
 import 'buttom_add_device.dart';
 import 'more_vert.dart';
-
-class AddDevice extends StatefulWidget {
-
-  @override
-  State<AddDevice> createState() => _AddDeviceState();
-}
-
-class _AddDeviceState extends State<AddDevice> {
-  @override
-  Widget build(BuildContext context) {
-    return Device(
-      id: "12345yhbvcxz",
-      dataUpdated: "Updated 1 minutes ago",
-      minTemperature: "-50",
-      maxTemperature: "-90",
-      temperature: "-60",
-
-    );
-  }
-}
-
-class Device extends StatefulWidget {
+// class AddDevice extends StatefulWidget {
+//
+//   @override
+//   State<AddDevice> createState() => _AddDeviceState();
+// }
+//
+// class _AddDeviceState extends State<AddDevice> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return PageDevice(
+//       id: "12345yhbvcxz",
+//       dataUpdated: "Updated 1 minutes ago",
+//       minTemperature: "-50",
+//       maxTemperature: "-90",
+//       temperature: "-60",
+//
+//     );
+//   }
+// }
+class PageDevice extends StatefulWidget {
 
   String id ;
   String dataUpdated ;
@@ -35,7 +32,7 @@ class Device extends StatefulWidget {
   String minTemperature ;
   String maxTemperature ;
 
-  Device({
+  PageDevice({
     required this.id,
     required this.dataUpdated,
     required this.temperature,
@@ -44,20 +41,17 @@ class Device extends StatefulWidget {
   });
 
   @override
-  State<Device> createState() => _DeviceState();
+  State<PageDevice> createState() => _PageDeviceState();
 }
 
-class _DeviceState extends State<Device> {
+class _PageDeviceState extends State<PageDevice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Row(
             children: [
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 130
-                ),
+              const Center(
                 child: Text(
                   "Setup",
                   style: TextStyle(fontSize: 30),
@@ -86,7 +80,12 @@ class _DeviceState extends State<Device> {
               ],
             ),
             Padding(
-                child:Text(widget.dataUpdated) ,
+                child: Row(
+                  children: [
+                    Text("Updeted : "),
+                    Text(widget.dataUpdated)
+                  ],
+                ),
                 padding: EdgeInsets.only(right: 195,top: 8,bottom: 50)
             ),
             TextField(

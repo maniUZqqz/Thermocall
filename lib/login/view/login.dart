@@ -10,6 +10,7 @@ import 'package:thermocall/login/bloc/login_state.dart';
 import 'package:thermocall/login/view/password_input.dart';
 import 'package:thermocall/login/view/register.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../home/view/home_app.dart';
 import 'button.dart';
 import 'email_input.dart';
 
@@ -66,15 +67,15 @@ class _LoginState extends State<Login> {
                 textInButton: "Log in",
                 textColor: ColorWhite,
                 buttonColor: ColorBlack,
-                onTap: (){
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Home(),
-                      )
-                  );
-                },
-//                navigator: Register(),
+                // onTap: (){
+                //   Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => Home(),
+                //       )
+                //   );
+                // },
+                navigator: HomeApp(),
             ),
             Spacer(),
             Center(
@@ -92,15 +93,15 @@ class _LoginState extends State<Login> {
                 textInButton: "Register",
                 textColor: ColorBlack,
                 buttonColor: ColorWhite,
-                onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Register(),
-                    )
-                );
-              },
-//              navigator: Register(),
+              //   onTap: (){
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => Register(),
+              //       )
+              //   );
+              // },
+              navigator: Register(),
             )
           ],
           crossAxisAlignment: CrossAxisAlignment.start,

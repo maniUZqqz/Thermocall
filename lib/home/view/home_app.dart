@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:thermocall/home/view/more_vert.dart';
 import 'package:thermocall/home/view/profile.dart';
-import 'add_item.dart';
+import 'add_freezer.dart';
 import 'freezer.dart';
 import 'home.dart';
 
@@ -27,10 +27,7 @@ class _HomeAppState extends State<HomeApp> {
       appBar: AppBar(
         title: Row(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 105
-              ),
+            Center(
               child: Text(
                   "ThermoCall",
                   style: TextStyle(fontSize: 30),

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:thermocall/home/view/home.dart';
 import 'package:thermocall/login/view/password_input.dart';
+import '../../home/view/home_app.dart';
 import '../bloc/login_bloc.dart';
 import '../bloc/login_state.dart';
 import 'button.dart';
@@ -40,15 +42,15 @@ class _RegisterState extends State<Register> {
                 textInButton: "Register",
                 textColor: ColorWhite,
                 buttonColor: ColorBlack,
-                onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Login(),
-                    )
-                );
-              },
-//               navigator: Login(),
+              //   onTap: (){
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => Home(),
+              //       )
+              //   );
+              // },
+               navigator: HomeApp(),
             ),
             Spacer(),
             Center(
@@ -66,15 +68,15 @@ class _RegisterState extends State<Register> {
                 textInButton: "Log in",
                 textColor: ColorBlack,
                 buttonColor: ColorWhite,
-                onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Login(),
-                    )
-                );
-              },
-//                navigator: Login(),
+              //   onTap: (){
+              //   Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => Login(),
+              //       )
+              //   );
+              // },
+                navigator: Login(),
             )
           ],
           crossAxisAlignment: CrossAxisAlignment.start,

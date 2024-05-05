@@ -10,8 +10,21 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(
-      color: CupertinoColors.activeOrange,
+    return Container(
+      child: Column(
+        children: [
+          Padding(
+              child: Row(),
+              padding: EdgeInsets.only()
+          ),
+          Container(),
+          Padding(
+              child: Text(''),
+              padding: EdgeInsets.symmetric()
+          ),
+          Text('')
+        ],
+      ),
     );
   }
 }

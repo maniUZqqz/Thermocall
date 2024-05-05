@@ -70,119 +70,121 @@ class _PageDeviceState extends State<PageDevice> {
             ],
           )
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text('ID:'),
-                Text(widget.id)
-              ],
-            ),
-            Padding(
-                child: Row(
-                  children: [
-                    Text("Updeted : "),
-                    Text(widget.dataUpdated)
-                  ],
-                ),
-                padding: EdgeInsets.only(right: 195,top: 8,bottom: 50)
-            ),
-            TextField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10),
-                hintText:  "Bio Call",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(0),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text('ID:'),
+                  Text(widget.id)
+                ],
+              ),
+              Padding(
+                  child: Row(
+                    children: [
+                      Text("Updeted : "),
+                      Text(widget.dataUpdated)
+                    ],
+                  ),
+                  padding: EdgeInsets.only(right: 195,top: 8,bottom: 50)
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(10),
+                  hintText:  "Bio Call",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  ),
                 ),
               ),
-            ),
-            Padding(
-                child: TextField(
-                  maxLines: null,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(10),
-                    hintText:  "The freezer is iocated in the basement room#",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                  ),
-                ),
-                padding: EdgeInsets.only(top: 40,bottom: 30)
-            ),
-            Text(
-                'Set Temperature Range'
-            ),
-            Padding(
-                child: Row(
-                  children: [
-                    Text(
-                      widget.minTemperature,
-                      style: TextStyle(
-                          fontSize: 30
+              Padding(
+                  child: TextField(
+                    maxLines: null,
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(10),
+                      hintText:  "The freezer is iocated in the basement room#",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(0),
                       ),
                     ),
-                    Padding(
-                      child:Container(
-                        child:  Text(
-                          widget.temperature,
-                          style: TextStyle(
-                              fontSize: 30
+                  ),
+                  padding: EdgeInsets.only(top: 40,bottom: 30)
+              ),
+              Text(
+                  'Set Temperature Range'
+              ),
+              Padding(
+                  child: Row(
+                    children: [
+                      Text(
+                        widget.minTemperature,
+                        style: TextStyle(
+                            fontSize: 30
+                        ),
+                      ),
+                      Padding(
+                        child:Container(
+                          child:  Text(
+                            widget.temperature,
+                            style: TextStyle(
+                                fontSize: 30
+                            ),
                           ),
-                        ),
-                        width: 80,
-                        height: 80,
-                        padding: EdgeInsets.only(left: 15,top: 15),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xffEAF5FF)
-                        ),
-                      ) ,
-                      padding:EdgeInsets.only(right: 40,left: 50),
-                    ),
-                    Text(
-                      widget.maxTemperature,
-                      style: TextStyle(
-                          fontSize: 30
+                          width: 80,
+                          height: 80,
+                          padding: EdgeInsets.only(left: 15,top: 15),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xffEAF5FF)
+                          ),
+                        ) ,
+                        padding:EdgeInsets.only(right: 40,left: 50),
                       ),
-                    )
-                  ],
-                ),
-                padding: EdgeInsets.only(top: 60,left: 50)
-            ),
-            const Spacer(),
-            Row(
-              children: [
-                Padding(
-                    child: InkWell(
-                      child: ButtomAdd(
-                        textColor: Color(0xff3C71A0),
-                        buttonColor: Colors.white,
-                        textInButton: "Cancel",
-                      ),
-                      onTap: (){},
-                    ),
-                    padding: EdgeInsets.only(right: 15,left: 38)
-                ),
-                InkWell(
-                  child: ButtomAdd(
-                    textColor: Colors.white,
-                    buttonColor: Color(0xff3C71A0),
-                    textInButton: "Save",
+                      Text(
+                        widget.maxTemperature,
+                        style: TextStyle(
+                            fontSize: 30
+                        ),
+                      )
+                    ],
                   ),
-                  onTap: (){},
-                )
-              ],
-            )
-          ],
-          crossAxisAlignment: CrossAxisAlignment.start,
+                  padding: EdgeInsets.only(top: 60,left: 50,bottom: 160)
+              ),
+//            const Spacer(),
+              Row(
+                children: [
+                  Padding(
+                      child: InkWell(
+                        child: ButtomAdd(
+                          textColor: Color(0xff3C71A0),
+                          buttonColor: Colors.white,
+                          textInButton: "Cancel",
+                        ),
+                        onTap: (){},
+                      ),
+                      padding: EdgeInsets.only(right: 15,left: 38)
+                  ),
+                  InkWell(
+                    child: ButtomAdd(
+                      textColor: Colors.white,
+                      buttonColor: Color(0xff3C71A0),
+                      textInButton: "Save",
+                    ),
+                    onTap: (){},
+                  )
+                ],
+              )
+            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          padding: EdgeInsets.only(
+              left: 23,
+              right: 23,
+              bottom: 40
+          ),
         ),
-        padding: EdgeInsets.only(
-            left: 23,
-            right: 23,
-            bottom: 40
-        ),
-      ),
+      )
     );
   }
 }

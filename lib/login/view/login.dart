@@ -38,32 +38,33 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            EmailInput(),
-            PasswordInput(
-                textOnTextfield: "Password",
-                textInTextfield: " Enter your password"
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: Size16dp,
-                  bottom: Size32dp
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              EmailInput(),
+              PasswordInput(
+                  textOnTextfield: "Password",
+                  textInTextfield: " Enter your password"
               ),
-              child: Row(
-                children: [
-                  Text(
-                    "Forgot password ?",
-                    style: TextStyle(
-                        color: Colors.blueAccent
-                    ),
-                  )
-                ],
-                mainAxisAlignment: MainAxisAlignment.end,
+              Padding(
+                padding: EdgeInsets.only(
+                    top: Size16dp,
+                    bottom: Size32dp
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      "Forgot password ?",
+                      style: TextStyle(
+                          color: Colors.blueAccent
+                      ),
+                    )
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.end,
+                ),
               ),
-            ),
-            Button(
+              Button(
                 textInButton: "Log in",
                 textColor: ColorWhite,
                 buttonColor: ColorBlack,
@@ -76,43 +77,45 @@ class _LoginState extends State<Login> {
                 //   );
                 // },
                 navigator: HomeApp(),
-            ),
-            Spacer(),
-            Center(
-              child: Container(
-                child: Text(
-                  "Don't have an account?",
-                  style: TextStyle(
-                      color: textColorBlack54
-                  ),
-                ),
-                padding: EdgeInsets.only(bottom: Size16dp),
               ),
-            ),
-            Button(
+              Padding(padding: EdgeInsets.only(bottom: 150)),
+//              Spacer(),
+              Center(
+                child: Container(
+                  child: Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                        color: textColorBlack54
+                    ),
+                  ),
+                  padding: EdgeInsets.only(bottom: Size16dp),
+                ),
+              ),
+              Button(
                 textInButton: "Register",
                 textColor: ColorBlack,
                 buttonColor: ColorWhite,
-              //   onTap: (){
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => Register(),
-              //       )
-              //   );
-              // },
-              navigator: Register(),
-            )
-          ],
-          crossAxisAlignment: CrossAxisAlignment.start,
+                //   onTap: (){
+                //   Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => Register(),
+                //       )
+                //   );
+                // },
+                navigator: Register(),
+              )
+            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          padding: EdgeInsets.only(
+              left: Size16dp,
+              right: Size16dp,
+              bottom: Size32dp,
+              top: 200
+          ),
         ),
-        padding: EdgeInsets.only(
-            left: Size16dp,
-            right: Size16dp,
-            bottom: Size32dp,
-            top: 200
-        ),
-      ),
+      )
     );
   }
 }

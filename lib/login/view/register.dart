@@ -23,69 +23,72 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        child: Column(
-          children: [
-            EmailInput(),
-            PasswordInput(
-                textOnTextfield: "Create Password",
-                textInTextfield: " Enter your password"
-            ),
-            PasswordInput(
-                textOnTextfield: "Repeat Password",
-                textInTextfield: " Repeat your Password "
-            ),
-            Padding(
-                padding: EdgeInsets.only(top: Size32dp)
-            ),
-            Button(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              EmailInput(),
+              PasswordInput(
+                  textOnTextfield: "Create Password",
+                  textInTextfield: " Enter your password"
+              ),
+              PasswordInput(
+                  textOnTextfield: "Repeat Password",
+                  textInTextfield: " Repeat your Password "
+              ),
+              Padding(
+                  padding: EdgeInsets.only(top: Size32dp)
+              ),
+              Button(
                 textInButton: "Register",
                 textColor: ColorWhite,
                 buttonColor: ColorBlack,
-              //   onTap: (){
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => Home(),
-              //       )
-              //   );
-              // },
-               navigator: HomeApp(),
-            ),
-            Spacer(),
-            Center(
-              child: Container(
-                child: Text(
-                  'Already have an account?',
-                  style: TextStyle(
-                      color: textColorBlack54
-                  ),
-                ),
-                padding: EdgeInsets.only(bottom: Size16dp),
+                //   onTap: (){
+                //   Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => Home(),
+                //       )
+                //   );
+                // },
+                navigator: HomeApp(),
               ),
-            ),
-            Button(
+              Padding(padding: EdgeInsets.only(bottom: 83)),
+//            Spacer(),
+              Center(
+                child: Container(
+                  child: Text(
+                    'Already have an account?',
+                    style: TextStyle(
+                        color: textColorBlack54
+                    ),
+                  ),
+                  padding: EdgeInsets.only(bottom: Size16dp),
+                ),
+              ),
+              Button(
                 textInButton: "Log in",
                 textColor: ColorBlack,
                 buttonColor: ColorWhite,
-              //   onTap: (){
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //         builder: (context) => Login(),
-              //       )
-              //   );
-              // },
+                //   onTap: (){
+                //   Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => Login(),
+                //       )
+                //   );
+                // },
                 navigator: Login(),
-            )
-          ],
-          crossAxisAlignment: CrossAxisAlignment.start,
-        ),
-        padding: EdgeInsets.only(
+              )
+            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+          ),
+          padding: EdgeInsets.only(
             left: Size16dp,
             right: Size16dp,
             bottom: Size32dp,
             top: 50,
+          ),
         ),
       ),
     );

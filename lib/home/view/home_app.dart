@@ -46,9 +46,11 @@ class _HomeAppState extends State<HomeApp> {
           ],
         )
       ),
-      body: homeList[
+      body:SingleChildScrollView(
+        child: homeList[
         _currentIndex
-      ] ,
+        ],
+      ),
       // body: _currentIndex == 0 ? Home() : Profile(),
        bottomNavigationBar: BottomNavigationBar(
          currentIndex: _currentIndex,

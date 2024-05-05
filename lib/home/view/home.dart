@@ -16,43 +16,85 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       //  child: SingleChildScrollView()
-      child: Column(
-        children: [
-          Freezer(
-            name: "Freezer name",
-            time: "Last Updated 6:25 pm",
-            temperature: "-60",
-            maxTemperature: "-65",
-            minTemperature: "-50",
-            isError: false,
-          ),
-          Freezer(
-            name: "Freezer name",
-            time: "Last Updated 6:25 pm",
-            temperature: "-60",
-            maxTemperature: "-65",
-            minTemperature: "-50",
-            isError: true,
-          ),
-          Freezer(
-            name: "Freezer name",
-            time: "Last Updated 6:25 pm",
-            temperature: "-60",
-            maxTemperature: "-65",
-            minTemperature: "-50",
-            isError: false,
-          ),
-          Freezer(
-            name: "Freezer name",
-            time: "Last Updated 6:25 pm",
-            temperature: "-60",
-            maxTemperature: "-65",
-            minTemperature: "-50",
-            isError: false,
-          ),
-          Spacer(),
-          AddItem()
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: true,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+            Freezer(
+              name: "Freezer name",
+              time: "Last Updated 6:25 pm",
+              temperature: "-60",
+              maxTemperature: "-65",
+              minTemperature: "-50",
+              isError: false,
+            ),
+//          Spacer(),
+            AddItem()
+          ],
+        ),
       ),
       padding: EdgeInsets.all(10),
       color: Colors.white,

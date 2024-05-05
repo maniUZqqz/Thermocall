@@ -34,15 +34,7 @@ class _HomeAppState extends State<HomeApp> {
               ),
             ),
             Spacer(),
-            IconButton(
-                onPressed: () {
-                  MoreVert();
-                },
-                icon: Icon(
-              Icons.more_vert,
-              size: 35,
-            )
-            )
+            MoreVert()
           ],
         )
       ),

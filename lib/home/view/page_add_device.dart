@@ -58,15 +58,7 @@ class _PageDeviceState extends State<PageDevice> {
                 ),
               ),
               Spacer(),
-              IconButton(
-                  onPressed: () {
-                    MoreVert();
-                  },
-                  icon: Icon(
-                    Icons.more_vert,
-                    size: 35,
-                  )
-              )
+              MoreVert()
             ],
           )
       ),
@@ -151,6 +143,7 @@ class _PageDeviceState extends State<PageDevice> {
                   ),
                   padding: EdgeInsets.only(top: 60,left: 50,bottom: 160)
               ),
+//            Slider()
 //            const Spacer(),
               Row(
                 children: [

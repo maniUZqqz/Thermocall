@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:thermocall/home/view/page_add_device.dart';
+
+import '../../setup/view/page_device.dart';
 
 class AddItem extends StatelessWidget {
   const AddItem({super.key});

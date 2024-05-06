@@ -23,7 +23,13 @@ class _MoreVertState extends State<MoreVert> {
       itemBuilder: (BuildContext context) => [
         PopupMenuItem(
             child:Row(
-              children: [Text('Celcuis'),Spacer(),Icon(Icons.abc)],
+              children: [
+                Text(
+                    'Celcuis',
+                ),
+                Spacer(),
+                Icon(Icons.abc)
+              ],
             ),
             onTap: () {
 
@@ -31,7 +37,13 @@ class _MoreVertState extends State<MoreVert> {
         ),
         PopupMenuItem(
             child:Row(
-              children: [Text('Fahrenheit'),Spacer(),Icon(Icons.abc)],
+              children: [
+                Text(
+                    'Fahrenheit',
+                ),
+                Spacer(),
+                Icon(Icons.abc)
+              ],
             ),
             onTap: () {
 

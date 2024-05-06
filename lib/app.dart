@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:thermocall/home/view/page_add_device.dart';
 import 'package:thermocall/home/view/home_app.dart';
 import 'package:thermocall/login/bloc/login_bloc.dart';
 import 'package:thermocall/login/view/login.dart';

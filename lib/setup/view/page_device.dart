@@ -47,6 +47,8 @@ class PageDevice extends StatefulWidget {
 }
 
 class _PageDeviceState extends State<PageDevice> {
+  double _lowerValue = -65;
+  double _upperValue = -50;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,17 +189,29 @@ class _PageDeviceState extends State<PageDevice> {
                       ],
                     ),
                     padding: EdgeInsets.only(
-                        top: 60,left: 50,bottom: 140
+                        top: 60,left: 50,bottom: 0
                     )
                 ),
-//            Slider()
-//                 RangeSlider(
-//                   values: RangeValues(
-//                       10.0 , 20.0
-//                   ),
-//                   onChanged: (RangeValues value) {  },
-//                 ),
-//            const Spacer(),
+                RangeSlider(
+                  values: RangeValues(
+                      // widget.minTemperature as double,
+                      // widget.maxTemperature as double
+                      _lowerValue, _upperValue
+                  ),
+                  min: -70,
+                  max: -50,
+                  divisions: 20,
+                  onChanged: (values) {
+                    setState(() {
+                      // widget.minTemperature = values.start;
+                      // widget.maxTemperature = values.end;
+                      _lowerValue = values.start;
+                      _upperValue = values.end;
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+                Padding(padding: EdgeInsets.only(bottom: 70)),
                 Row(
                   children: [
                     Padding(

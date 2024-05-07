@@ -22,7 +22,7 @@ class AddItem extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => PageDevice(
-                  temperature: "-60",
+                  temperature: "-69",
                   maxTemperature: "-65",
                   minTemperature: "-50",
                   id: "drtyuikbvc",

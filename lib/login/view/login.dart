@@ -32,6 +32,10 @@ class Login extends StatefulWidget {
 
   @override
   State<Login> createState() => _LoginState();
+
+  static Route<void> route() {
+    return route();
+  }
 }
 
 class _LoginState extends State<Login> {

@@ -9,6 +9,10 @@ class Home extends StatefulWidget {
 
   @override
   State<Home> createState() => _HomeState();
+
+  static Route<void> route() {
+    return route();
+  }
 }
 
 class _HomeState extends State<Home> {

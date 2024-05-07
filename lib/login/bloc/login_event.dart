@@ -1,5 +1,11 @@
 import 'package:equatable/equatable.dart';
 
+import '../data/repository.dart';
+
+sealed class AuthenticationEvent {
+  const AuthenticationEvent();
+}
+
 sealed class LoginEvent extends Equatable {
   const LoginEvent();
 
@@ -27,4 +33,10 @@ final class LoginPasswordChanged extends LoginEvent {
 
 final class LoginSubmitted extends LoginEvent {
   const LoginSubmitted();
+}
+
+final class _AuthenticationStatusChanged extends AuthenticationEvent {
+  const _AuthenticationStatusChanged(this.status);
+
+  final AuthenticationStatus status;
 }

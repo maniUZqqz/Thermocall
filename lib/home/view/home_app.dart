@@ -34,7 +34,68 @@ class _HomeAppState extends State<HomeApp> {
               ),
             ),
             Spacer(),
-            MoreVert()
+            MoreVert(
+              popopuOne: PopupMenuItem(
+                child:Row(
+                  children: [
+                    Text(
+                      'Celcuis',
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                    ),
+                    Spacer(),
+                    Icon(
+                        Icons.abc,
+                        color: Colors.white,
+                    )
+                  ],
+                ),
+                onTap: () {
+
+                },
+              ),
+              popopuTwo: PopupMenuItem(
+                child:Row(
+                  children: [
+                    Text(
+                      'Fahrenheit',
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
+                    Spacer(),
+                    Icon(
+                        Icons.abc,
+                        color: Colors.white,
+                    )
+                  ],
+                ),
+                onTap: () {
+
+                },
+              ),
+              popopuThree: PopupMenuItem(
+                child:Row(
+                  children: [
+                    Text(
+                        'Report Issue',
+                         style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
+                    Spacer(),
+                    Icon(
+                        Icons.edit,
+                        color: Colors.white,
+                    )
+                  ],
+                ),
+                onTap: () {
+
+                },
+              ),
+            )
           ],
         )
       ),

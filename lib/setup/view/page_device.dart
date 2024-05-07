@@ -27,6 +27,7 @@ import 'bottom_add_device.dart';
 // }
 class PageDevice extends StatefulWidget {
 
+
   String id ;
   String dataUpdated ;
   String temperature ;
@@ -59,7 +60,48 @@ class _PageDeviceState extends State<PageDevice> {
                   ),
                 ),
                 Spacer(),
-                MoreVert()
+                MoreVert(
+                  popopuOne: PopupMenuItem(
+                    child:Row(
+                      children: [
+                        Text(
+                          'Share Code',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.share,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    onTap: () {
+
+                    },
+                  ),
+                  popopuTwo: PopupMenuItem(
+                    child:Row(
+                      children: [
+                        Text(
+                          'Remove',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.remove_circle_outline,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+                    onTap: () {
+
+                    },
+                  ),
+                )
               ],
             )
         ),
@@ -85,7 +127,7 @@ class _PageDeviceState extends State<PageDevice> {
                 TextField(
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(10),
-                    hintText:  "Bio Call",
+                    labelText:  "Name",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(0),
                     ),
@@ -93,10 +135,12 @@ class _PageDeviceState extends State<PageDevice> {
                 ),
                 Padding(
                     child: TextField(
-                      maxLines: null,
+                      maxLines: 3,
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(10),
-                        hintText:  "The freezer is iocated in the basement room#",
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal:10 ,vertical:20
+                        ),
+                        labelText:  "Description",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(0),
                         ),
@@ -142,10 +186,17 @@ class _PageDeviceState extends State<PageDevice> {
                         )
                       ],
                     ),
-                    padding: EdgeInsets.only(top: 60,left: 50,bottom: 160)
+                    padding: EdgeInsets.only(
+                        top: 60,left: 50,bottom: 140
+                    )
                 ),
 //            Slider()
-// RengSlider()
+//                 RangeSlider(
+//                   values: RangeValues(
+//                       10.0 , 20.0
+//                   ),
+//                   onChanged: (RangeValues value) {  },
+//                 ),
 //            const Spacer(),
                 Row(
                   children: [
@@ -176,7 +227,7 @@ class _PageDeviceState extends State<PageDevice> {
             padding: EdgeInsets.only(
                 left: 23,
                 right: 23,
-                bottom: 40
+                bottom: 30
             ),
           ),
         )

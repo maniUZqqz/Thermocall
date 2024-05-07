@@ -14,7 +14,17 @@ class _ProfileState extends State<Profile> {
       child: Column(
         children: [
           Padding(
-              child: Row(),
+              child: Row(
+                children: [
+                  Container(
+                    child: Image.asset(''),
+                      height: 40,
+                  ),
+                  Column(
+
+                  )
+                ],
+              ),
               padding: EdgeInsets.only()
           ),
           Container(),

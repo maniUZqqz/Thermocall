@@ -1,11 +1,20 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MoreVert extends StatefulWidget {
-  const MoreVert({super.key});
+
+  PopupMenuEntry popopuOne ;
+  PopupMenuEntry popopuTwo ;
+  PopupMenuEntry? popopuThree ;
+
+  MoreVert({
+    super.key,
+    required this.popopuOne,
+    required this.popopuTwo,
+    this.popopuThree
+  });
 
   @override
   State<MoreVert> createState() => _MoreVertState();
@@ -14,50 +23,18 @@ class MoreVert extends StatefulWidget {
 class _MoreVertState extends State<MoreVert> {
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton(
-      icon: Icon(
-          Icons.more_vert,
-          size: 35,
-        ),
-      color: Color(0xff0460D9),
-      itemBuilder: (BuildContext context) => [
-        PopupMenuItem(
-            child:Row(
-              children: [
-                Text(
-                    'Celcuis',
-                ),
-                Spacer(),
-                Icon(Icons.abc)
-              ],
-            ),
-            onTap: () {
-
-            },
-        ),
-        PopupMenuItem(
-            child:Row(
-              children: [
-                Text(
-                    'Fahrenheit',
-                ),
-                Spacer(),
-                Icon(Icons.abc)
-              ],
-            ),
-            onTap: () {
-
-          },
-        ),
-        PopupMenuItem(
-            child:Row(
-              children: [Text('Report Issue'),Spacer(),Icon(Icons.edit)],
-            ),
-            onTap: () {
-
-          },
-        ),
-      ],
-    );
+        return PopupMenuButton(
+          icon: Icon(
+              Icons.more_vert,
+              size: 35,
+              color: Color(0xff002039),
+          ),
+          color: Color(0xff0460D9),
+          itemBuilder: (BuildContext context) => [
+            widget.popopuOne,
+            widget.popopuTwo,
+            if (widget.popopuThree != null ) widget.popopuThree!,
+         ],
+        );
   }
 }

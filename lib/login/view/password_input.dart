@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 
 class PasswordInput extends StatefulWidget {
-
+  Function(String) onCheng ;
   String textOnTextfield;
   String textInTextfield;
 
   PasswordInput({
     required this.textOnTextfield,
     required this.textInTextfield,
+    required this.onCheng
   });
 
   @override
@@ -38,6 +39,9 @@ class _PasswordInputState extends State<PasswordInput> {
             ),
           ),
           TextField(
+            onChanged: (value) {
+              widget.onCheng;
+            },
             obscureText: _aneye,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.all(10),

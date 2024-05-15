@@ -26,8 +26,6 @@ const ColorWhite = Colors.white ;
 double Size16dp = 16.0 ;
 double Size32dp = 32.0 ;
 
-
-
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -55,10 +53,17 @@ class _LoginState extends State<Login> {
           child: Container(
             child: Column(
               children: [
-                EmailInput(),
+                EmailInput(
+                  onCheng: ( value ) {
+                    context.read<LoginBloc>().add(LoginUsernameChanged(value));
+                  },
+                ),
                 PasswordInput(
                     textOnTextfield: "Password",
-                    textInTextfield: " Enter your password"
+                    textInTextfield: " Enter your password",
+                     onCheng: ( value ) {
+                    context.read<LoginBloc>().add(LoginPasswordChanged(value));
+                  },
                 ),
                 Padding(
                   padding: EdgeInsets.only(

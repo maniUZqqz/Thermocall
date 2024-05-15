@@ -21,20 +21,29 @@ class LoginBloc extends Bloc< LoginEvent , LoginState>{
   void _onUsernameChanged(
       LoginUsernameChanged event,
       Emitter<LoginState> emit,
-      ){}
+      ){
+      final status = state.status ;
+      final username = state.username ;
+      final password = state.password ;
+      emit(LoginState(
+          username: username , password: password ,status: status
+      ));
+  }
 
   void _onPasswordChanged(
       LoginPasswordChanged event,
       Emitter<LoginState> emit,
-      ){}
+      ){
+     emit(LoginState(password: event.password));
+  }
 
   void _onSubmitted(
       LoginSubmitted event,
       Emitter<LoginState> emit,
       ){
 
-    String username = "mani";
-    String password = "123456";
+    String username = state.username;
+    String password = state.password;
 
     if (username=="mani" && password=="123456"){
         emit(

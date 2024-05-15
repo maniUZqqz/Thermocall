@@ -5,6 +5,7 @@ import 'package:thermocall/home/view/home.dart';
 import 'package:thermocall/login/view/password_input.dart';
 import '../../home/view/home_app.dart';
 import '../bloc/login_bloc.dart';
+import '../bloc/login_event.dart';
 import '../bloc/login_state.dart';
 import 'button.dart';
 import 'email_input.dart';
@@ -27,14 +28,21 @@ class _RegisterState extends State<Register> {
         child: Container(
           child: Column(
             children: [
-              EmailInput(),
+              EmailInput(onCheng: (String ) {  },),
               PasswordInput(
                   textOnTextfield: "Create Password",
-                  textInTextfield: " Enter your password"
+                  textInTextfield: " Enter your password",
+                  onCheng: (value) {
+                    context.read<LoginBloc>().add(LoginPasswordChanged(value));
+                  },
+
               ),
               PasswordInput(
                   textOnTextfield: "Repeat Password",
-                  textInTextfield: " Repeat your Password "
+                  textInTextfield: " Repeat your Password ",
+                  onCheng: (value) {
+                    context.read<LoginBloc>().add(LoginPasswordChanged(value));
+                  },
               ),
               Padding(
                   padding: EdgeInsets.only(top: Size32dp)

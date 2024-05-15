@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:thermocall/home/view/home_app.dart';
 import 'package:thermocall/login/bloc/login_bloc.dart';
 import 'package:thermocall/login/view/login.dart';
-
+import 'login/data/repository.dart';
 import 'home/view/home.dart';
 import 'login/bloc/login_state.dart';
 import 'login/data/repository.dart';
@@ -28,24 +28,24 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late final AuthenticationRepository _authenticationRepository;
+  // late final AuthenticationRepository _authenticationRepository;
   late final UserRepository _userRepository;
 
-  @override
-  void initState() {
-    super.initState();
-    _authenticationRepository = AuthenticationRepository();
-    _userRepository = UserRepository();
-  }
-
-  @override
-  void dispose() {
-    _authenticationRepository.dispose();
-    super.dispose();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _authenticationRepository = AuthenticationRepository();
+  //   _userRepository = UserRepository();
+  // }
+  // @override
+  // void dispose() {
+  //   _authenticationRepository.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    var _authenticationRepository;
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -69,6 +69,8 @@ class _AppState extends State<App> {
 
 
 
+
+
 class AppView extends StatefulWidget {
   const AppView({super.key});
 
@@ -88,22 +90,22 @@ class _AppViewState extends State<AppView> {
       builder: (context, child) {
         return BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {
-            switch (state.status) {
-              case AuthenticationStatus.authenticated:
-                _navigator.pushAndRemoveUntil<void>(
-                  Home.route(),
-                      (route) => false,
-                );
-              case AuthenticationStatus.unauthenticated:
-                _navigator.pushAndRemoveUntil<void>(
-                  Login.route(),
-                      (route) => false,
-                );
-              case AuthenticationStatus.unknown:
-                break;
-            }
+            // switch (state.status) {
+            //   case AuthenticationStatus.authenticated:
+            //     _navigator.pushAndRemoveUntil<void>(
+            //       Home.route(),
+            //           (route) => false,
+            //     );
+            //   case AuthenticationStatus.unauthenticated:
+            //     _navigator.pushAndRemoveUntil<void>(
+            //       Login.route(),
+            //           (route) => false,
+            //     );
+            //   case AuthenticationStatus.unknown:
+            //     break;
+            //}
           },
-          child: child,
+          child: const Login(),
         );
       },
       onGenerateRoute: (_) => SplashPage.route(),

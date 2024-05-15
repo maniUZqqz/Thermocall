@@ -6,6 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:thermocall/home/view/home.dart';
 import 'package:thermocall/login/bloc/login_bloc.dart';
+import 'package:thermocall/login/bloc/login_event.dart';
 import 'package:thermocall/login/bloc/login_state.dart';
 import 'package:thermocall/login/view/password_input.dart';
 import 'package:thermocall/login/view/register.dart';
@@ -41,85 +42,94 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              EmailInput(),
-              PasswordInput(
-                  textOnTextfield: "Password",
-                  textInTextfield: " Enter your password"
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                    top: Size16dp,
-                    bottom: Size32dp
+    return BlocListener<LoginBloc , LoginState>(
+      listener: (context, state) {
+        if (state.status == true ){
+          const HomeApp();
+        }else{
+
+        }
+      },
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: [
+                EmailInput(),
+                PasswordInput(
+                    textOnTextfield: "Password",
+                    textInTextfield: " Enter your password"
                 ),
-                child: Row(
-                  children: [
-                    Text(
-                      "Forgot password ?",
-                      style: TextStyle(
-                          color: Colors.blueAccent
-                      ),
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.end,
-                ),
-              ),
-              Button(
-                textInButton: "Log in",
-                textColor: ColorWhite,
-                buttonColor: ColorBlack,
-                // onTap: (){
-                //   Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => Home(),
-                //       )
-                //   );
-                // },
-                navigator: HomeApp(),
-              ),
-              Padding(padding: EdgeInsets.only(bottom: 150)),
-//              Spacer(),
-              Center(
-                child: Container(
-                  child: Text(
-                    "Don't have an account?",
-                    style: TextStyle(
-                        color: textColorBlack54
-                    ),
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: Size16dp,
+                      bottom: Size32dp
                   ),
-                  padding: EdgeInsets.only(bottom: Size16dp),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Forgot password ?",
+                        style: TextStyle(
+                            color: Colors.blueAccent
+                        ),
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.end,
+                  ),
                 ),
-              ),
-              Button(
-                textInButton: "Register",
-                textColor: ColorBlack,
-                buttonColor: ColorWhite,
-                //   onTap: (){
-                //   Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => Register(),
-                //       )
-                //   );
-                // },
-                navigator: Register(),
-              )
-            ],
-            crossAxisAlignment: CrossAxisAlignment.start,
+                Button(
+                  textInButton: "Log in",
+                  textColor: ColorWhite,
+                  buttonColor: ColorBlack,
+                  onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Home(),
+                        )
+                    );
+                  },
+                  // navigator: context.read<LoginBloc>().add(LoginSubmitted()),
+                ),
+                Padding(padding: EdgeInsets.only(bottom: 150)),
+      //              Spacer(),
+                Center(
+                  child: Container(
+                    child: Text(
+                      "Don't have an account?",
+                      style: TextStyle(
+                          color: textColorBlack54
+                      ),
+                    ),
+                    padding: EdgeInsets.only(bottom: Size16dp),
+                  ),
+                ),
+                Button(
+                  textInButton: "Register",
+                  textColor: ColorBlack,
+                  buttonColor: ColorWhite,
+                    onTap: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Register(),
+                        )
+                    );
+                  },
+                  // navigator: Register(),
+                )
+              ],
+              crossAxisAlignment: CrossAxisAlignment.start,
+            ),
+            padding: EdgeInsets.only(
+                left: Size16dp,
+                right: Size16dp,
+                bottom: Size32dp,
+                top: 200
+            ),
           ),
-          padding: EdgeInsets.only(
-              left: Size16dp,
-              right: Size16dp,
-              bottom: Size32dp,
-              top: 200
-          ),
-        ),
-      )
+        )
+      ),
     );
   }
 }

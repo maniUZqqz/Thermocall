@@ -6,12 +6,14 @@ final class LoginState extends Equatable {
 
 
   const LoginState({
-    this.status = FormzSubmissionStatus.initial,
+//    this.status = FormzSubmissionStatus.initial,
+    this.status = false,
     this.username = "",
     this.password = "",
   });
 
-  final FormzSubmissionStatus status;
+  // final FormzSubmissionStatus status;
+  final bool status;
   final String username;
   final String password;
 

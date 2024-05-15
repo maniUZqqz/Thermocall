@@ -27,3 +27,5 @@ class AuthenticationRepository {
 
   void dispose() => _controller.close();
 }
+class _authenticationRepository {
+}
